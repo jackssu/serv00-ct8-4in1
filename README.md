@@ -14,11 +14,31 @@ bash <(curl -s https://raw.githubusercontent.com/cmliu/socks5-for-serv00/main/in
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/cmliu/socks5-for-serv00/main/install-socks5-pm2.sh)
 ```
-
-- 一键卸载pm2
-```bash
+- 一键卸载  
+```
 pm2 unstartup && pm2 delete all && npm uninstall -g pm2
 ```
+
+### singbox多协议一键脚本
+老王版本William修改：vmess-ws|vmess-ws-tls(argo)|hy2|socks+哪吒
+```
+bash <(curl -Ls https://raw.githubusercontent.com/yutian81/socks5-for-serv00/main/serv00-sb4.sh)
+```
+可以不改动代码自动自定义UUID
+```
+UUID=你生成的UUID填在这里 bash <(curl -Ls https://raw.githubusercontent.com/yutian81/socks5-for-serv00/main/serv00-sb4.sh)
+```
+
+### 清空serv00  
+> 删除所有主目录文件：
+```
+chmod -R 755 ~/* && rm -rf ~/* && chmod -R 755 ~/.* && rm -rf ~/.*
+```
+> 关闭所有进程，ssh会中断
+```
+kill -9 -1
+```
+
 ----
 ## Github Actions保活
 添加 Secrets.`ACCOUNTS_JSON` 变量
