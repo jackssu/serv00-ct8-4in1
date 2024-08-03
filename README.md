@@ -24,7 +24,7 @@ pm2 unstartup && pm2 delete all && npm uninstall -g pm2
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/yutian81/socks5-for-serv00/main/serv00-sb4.sh)
 ```
-可以不改动代码自动自定义UUID
+可以不改动代码实现自定义UUID
 ```
 UUID=你生成的UUID填在这里 bash <(curl -Ls https://raw.githubusercontent.com/yutian81/socks5-for-serv00/main/serv00-sb4.sh)
 ```
