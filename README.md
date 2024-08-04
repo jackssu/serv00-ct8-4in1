@@ -30,9 +30,12 @@ UUID=你生成的UUID填在这里 bash <(curl -Ls https://raw.githubusercontent.
 ```
 
 ### 清空serv00  
-> 删除所有主目录文件：
+> 删除所有主目录文件，依次运行
 ```
-chmod -R 755 ~/* && rm -rf ~/* && chmod -R 755 ~/.* && rm -rf ~/.*
+chmod -R 755 ~/*
+rm -rf ~/*
+chmod -R 755 ~/.*
+rm -rf ~/.*
 ```
 > 关闭所有进程，ssh会中断
 ```
