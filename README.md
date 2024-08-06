@@ -19,32 +19,31 @@ bash <(curl -s https://raw.githubusercontent.com/cmliu/socks5-for-serv00/main/in
 pm2 unstartup && pm2 delete all && npm uninstall -g pm2
 ```
 
-### singbox多协议一键脚本
-老王版本William修改：vmess-ws|vmess-ws-tls(argo)|hy2|socks+哪吒
+### 清空重置serv00  
+> 更改权限：
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/yutian81/socks5-for-serv00/main/serv00-sb4.sh)
+find ~ -type f -exec chmod 644 {} \; 2>/dev/null
+find ~ -type d -exec chmod 755 {} \; 2>/dev/null
 ```
-可以不改动代码实现自定义UUID
+> 删除文件：
 ```
-UUID=你生成的UUID填在这里 bash <(curl -Ls https://raw.githubusercontent.com/yutian81/socks5-for-serv00/main/serv00-sb4.sh)
+find ~ -type f -exec rm -f {} \; 2>/dev/null
 ```
-
-### 清空serv00  
-> 删除所有主目录文件，依次运行
+> 删除空目录：
 ```
-chmod -R 755 ~/*
-rm -rf ~/*
-chmod -R 755 ~/.*
-rm -rf ~/.*
+find ~ -type d -empty -exec rmdir {} \; 2>/dev/null
 ```
-> 关闭所有进程，ssh会中断
+> 再次删除剩余的文件和目录：
 ```
-kill -9 -1
+find ~ -exec rm -rf {} \; 2>/dev/null
 ```
-
+> 清理进程：
+```
+pkill -kill -u xpfcom
+```
 ----
 ## Github Actions保活
-添加 Secrets.`ACCOUNTS_JSON` 变量
+添加 Secrets.`ACCOUNTS_JSON` 变量，示例
 ```json
 [
   {"username": "cmliusss", "password": "7HEt(xeRxttdvgB^nCU6", "panel": "panel4.serv00.com", "ssh": "s4.serv00.com"},
