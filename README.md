@@ -1,7 +1,8 @@
 # 准备工作
-在面板Additional servoces里打开Run your own applications为Enable  
-在面板Port reservation里添加 Add port 开放UDP和TCP端口  
-Hysteria2用UDP端口，Socks5用TCP端口  
+- 在面板Additional servoces里打开Run your own applications为Enable  
+- 在面板Port reservation里添加 Add port 开放UDP和TCP端口  
+- Hysteria2用UDP端口，Socks5用TCP端口  
+
 ----
 # socks5-for-serv00
 给 serv00 & ct8 机器一键安装 socks5 & nezha-agent
