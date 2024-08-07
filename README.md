@@ -25,7 +25,6 @@ CT8目前不推荐安装哪吒探针，安装探针容易封号。
 如果安装部署过其它脚本，请你在安装此脚本之前用下面的清理服务器命令清除一次服务器后再安装！！！！！！  
 
 ### 一键脚本 nohup模式
-> 推荐Socks5 hysteria2 nohup模式
 ```
 bash <(curl -s https://raw.githubusercontent.com/gshtwy/socks5-for-serv00/main/install-socks5-hysteria.sh)
 ```
