@@ -35,7 +35,6 @@ pm2 unstartup && pm2 delete all && npm uninstall -g pm2
 ```
 
 ### 重置服务器  
-> 更改权限：
 ```
 pkill -kill -u 用户名
 chmod -R 755 ~/* 
