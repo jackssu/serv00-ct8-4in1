@@ -2,7 +2,7 @@
 在面板Additional servoces里打开Run your own applications为Enable  
 在面板Port reservation里添加 Add port 开放UDP和TCP端口  
 Hysteria2用UDP端口，Socks5用TCP端口  
-
+----
 # socks5-for-serv00
 给 serv00 & ct8 机器一键安装 socks5 & nezha-agent
 
@@ -17,11 +17,7 @@ bash <(curl -s https://raw.githubusercontent.com/cmliu/socks5-for-serv00/main/in
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/cmliu/socks5-for-serv00/main/install-socks5-pm2.sh)
 ```
-- 一键卸载  
-```
-pm2 unstartup && pm2 delete all && npm uninstall -g pm2
-```
-
+----
 # socks5-hysteria2-for-serv00-ct8
 给 serv00 & ct8 机器一键安装 socks5 & hysteria2 & nezha-agent  
 CT8目前不推荐安装哪吒探针，安装探针容易封号。  
@@ -32,27 +28,20 @@ CT8目前不推荐安装哪吒探针，安装探针容易封号。
 ```
 bash <(curl -s https://raw.githubusercontent.com/gshtwy/socks5-for-serv00/main/install-socks5-hysteria.sh)
 ```
+---
+### 卸载PM2 
+```
+pm2 unstartup && pm2 delete all && npm uninstall -g pm2
+```
 
-### 清空重置serv00  
+### 重置服务器  
 > 更改权限：
 ```
-find ~ -type f -exec chmod 644 {} \; 2>/dev/null
-find ~ -type d -exec chmod 755 {} \; 2>/dev/null
-```
-> 删除文件：
-```
-find ~ -type f -exec rm -f {} \; 2>/dev/null
-```
-> 删除空目录：
-```
-find ~ -type d -empty -exec rmdir {} \; 2>/dev/null
-```
-> 再次删除剩余的文件和目录：
-```
-find ~ -exec rm -rf {} \; 2>/dev/null
-```
-> 清理进程：
-```
+pkill -kill -u 用户名
+chmod -R 755 ~/* 
+chmod -R 755 ~/.* 
+rm -rf ~/.* 
+rm -rf ~/*
 pkill -kill -u xpfcom
 ```
 ----
@@ -65,6 +54,6 @@ pkill -kill -u xpfcom
   {"username": "4r885wvl", "password": "%Mg^dDMo6yIY$dZmxWNy", "panel": "panel.ct8.pl", "ssh": "s1.ct8.pl"}
 ]
 ```
-
+----
 # 致谢
 [RealNeoMan](https://github.com/Neomanbeta/ct8socks)、[k0baya](https://github.com/k0baya/nezha4serv00)、[eooce](https://github.com/eooce)
