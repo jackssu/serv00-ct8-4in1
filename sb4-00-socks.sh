@@ -129,9 +129,9 @@ reading "\n确定继续安装吗？【y/n】: " choice
         read_socks_variables
         argo_configure
         generate_config
+        create_shortcut
         download_singbox && wait
         run_sb && sleep 3
-        create_shortcut
         get_links
       ;;
     [Nn]) exit 0 ;;
