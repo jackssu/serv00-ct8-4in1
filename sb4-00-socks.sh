@@ -107,7 +107,7 @@ EOF
   chmod +x "$WORKDIR/sb.sh"
   ln -sf "$WORKDIR/sb.sh" /usr/home/$USERNAME/sb
   if [ -s /usr/home/$USERNAME/sb ]; then
-    green "\nsb 快捷指令创建成功\n"
+    green "\nsb 快捷指令创建成功，输入 sb 即可快速呼出主菜单\n"
   else
     red "\nsb 快捷指令创建失败\n"
   fi
