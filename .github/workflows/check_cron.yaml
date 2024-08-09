@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up SSHPass
-        run: sudo apt-get update && sudo apt-get install -y sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass jq
 
       - name: Get ACCOUNTS_JSON
         id: get-accounts
