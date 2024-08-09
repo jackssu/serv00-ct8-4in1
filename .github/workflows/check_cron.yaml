@@ -23,21 +23,16 @@ jobs:
       - name: Generate SSH Commands
         id: generate-ssh-commands
         run: |
-          #!/bin/bash
-          printf "#!/bin/bash\n" > sshpass.sh
+          echo "#!/bin/bash" > sshpass.sh
           while IFS= read -r account; do
             username=$(echo "$account" | jq -r '.username')
             password=$(echo "$account" | jq -r '.password')
             ssh=$(echo "$account" | jq -r '.ssh')
 
-            printf "echo \"Executing for %s@%s\"\n" "$username" "$ssh" >> sshpass.sh
-            printf "sshpass -p '%s' ssh -o StrictHostKeyChecking=no '%s@%s' 'bash <(curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/check_cron.sh) && bash <(curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/check_sb_cron.sh)'\n" "$password" "$username" "$ssh" >> sshpass.sh
+            echo "echo \"Executing for $username@$ssh\"" >> sshpass.sh
+            echo "sshpass -p '$password' ssh -o StrictHostKeyChecking=no '$username@$ssh' 'bash <(curl -s https://raw.githubusercontent.com/cmliu/socks5-for-serv00/main/check_cron.sh)'" >> sshpass.sh
           done < <(jq -c '.[]' accounts.json)
           chmod +x sshpass.sh
-
-      - name: Convert line endings
-        run: |
-          sed -i 's/\r$//' sshpass.sh
 
       - name: Execute SSH Commands
         run: ./sshpass.sh
