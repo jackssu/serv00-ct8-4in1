@@ -98,22 +98,6 @@ read_nz_variables() {
   fi
 }
 
-# 创建快捷指令
-create_shortcut() {
-  cat > "$WORKDIR/sb.sh" << EOF
-#!/bin/bash
-
-bash <(curl -Ls https://raw.githubusercontent.com/yutian81/serv00-ct8/main/sb4-00-socks.sh) \$1
-EOF
-  chmod +x "$WORKDIR/sb.sh"
-  ln -sf "$WORKDIR/sb.sh" /usr/home/$USERNAME/sb
-  if [ -s /usr/home/$USERNAME/sb ]; then
-    echo -e "\nsb 快捷指令创建成功，输入 sb 即可快速呼出主菜单\n"
-  else
-    echo -e "\nsb 快捷指令创建失败\n"
-  fi
-}
-
 install_singbox() {
 echo -e "${yellow}本脚本同时四协议共存${purple}(vmess-ws,vmess-ws-tls(argo),hysteria2,socks5)${re}"
 echo -e "${yellow}开始运行前，请确保在面板${purple}已开放3个端口，两个tcp端口和一个udp端口${re}"
@@ -128,7 +112,6 @@ reading "\n确定继续安装吗？【y/n】: " choice
         read_socks_variables
         argo_configure
         generate_config
-        create_shortcut
         download_singbox && wait
         run_sb && sleep 3
         get_links
