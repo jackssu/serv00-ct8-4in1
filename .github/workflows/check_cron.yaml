@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up SSHPass
-        run: sudo apt-get update && sudo apt-get install -y sshpass jq
+        run: sudo apt-get update && sudo apt-get install -y sshpass
 
       - name: Get ACCOUNTS_JSON
         id: get-accounts
@@ -23,16 +23,20 @@ jobs:
       - name: Generate SSH Commands
         id: generate-ssh-commands
         run: |
-          echo "#!/bin/bash" > sshpass.sh
+          #!/bin/bash
+          printf "#!/bin/bash\n" > sshpass.sh
           while IFS= read -r account; do
             username=$(echo "$account" | jq -r '.username')
             password=$(echo "$account" | jq -r '.password')
             ssh=$(echo "$account" | jq -r '.ssh')
 
-            echo "echo \"Executing for $username@$ssh\"" >> sshpass.sh
-            echo "sshpass -p '$password' ssh -o StrictHostKeyChecking=no '$username@$ssh' 'bash <(curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/check_cron.sh) && bash <(curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/check_sb_cron.sh)'" >> sshpass.sh
+            printf "echo \"Executing for %s@%s\"\n" "$username" "$ssh" >> sshpass.sh
+            printf "sshpass -p '%s' ssh -o StrictHostKeyChecking=no '%s@%s' 'bash <(curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/check_cron.sh) && bash <(curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/check_sb_cron.sh)'\n" "$password" "$username" "$ssh" >> sshpass.sh
           done < <(jq -c '.[]' accounts.json)
           chmod +x sshpass.sh
+
+      - name: Convert line endings
+        run: dos2unix sshpass.sh
 
       - name: Execute SSH Commands
         run: ./sshpass.sh
