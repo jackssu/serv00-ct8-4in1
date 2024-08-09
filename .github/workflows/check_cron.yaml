@@ -36,7 +36,8 @@ jobs:
           chmod +x sshpass.sh
 
       - name: Convert line endings
-        run: dos2unix sshpass.sh
+        run: |
+          sed -i 's/\r$//' sshpass.sh
 
       - name: Execute SSH Commands
         run: ./sshpass.sh
