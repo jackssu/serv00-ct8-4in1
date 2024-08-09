@@ -39,9 +39,9 @@ bash <(curl -s https://raw.githubusercontent.com/gshtwy/socks5-for-serv00/main/i
 ```
 
 ### 给 serv00 & ct8 一键安装 vmess-ws|vmess-ws-tls(argo)|hy2|socks|nezha  
-> 本人在CM、eooce老王、William三位大佬的基础上修改，去掉了tuic5协议，增加了socks5协议
-> 与eooce老王脚本一样，支持在一键脚本前置UUID、端口、哪吒参数、Argo参数
-> 支持快捷指令`sb`，输入`sb`，选择`4`，可重新运行进程，不用重新安装脚本
+> 本人在CM、eooce老王、William三位大佬的基础上修改，去掉了tuic5协议，增加了socks5协议  
+> 与eooce老王脚本一样，支持在一键脚本前置UUID、端口、哪吒参数、Argo参数  
+> 支持快捷指令`sb`，输入`sb`，选择`4`，可重新运行进程，不用重新安装脚本  
 
 ```
 bash <(curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/sb4-00-socks.sh)
