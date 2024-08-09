@@ -102,7 +102,7 @@ read_nz_variables() {
 create_shortcut() {
   cat > "$WORKDIR/sb.sh" << EOF
 #!/usr/home/$USERNAME/env bash
-bash <(curl -Ls bash <(curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/sb4-00-socks.sh)) \$1
+bash <(curl -Ls https://raw.githubusercontent.com/yutian81/serv00-ct8/main/sb4-00-socks.sh) \$1
 EOF
   chmod +x "$WORKDIR/sb.sh"
   ln -sf "$WORKDIR/sb.sh" /usr/home/$USERNAME/sb
