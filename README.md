@@ -17,7 +17,7 @@ chmod -R 755 ~/*
 chmod -R 755 ~/.* 
 rm -rf ~/.* 
 rm -rf ~/*
-pkill -kill -u xpfcom
+pkill -kill -u 用户名
 ```
 
 ----
