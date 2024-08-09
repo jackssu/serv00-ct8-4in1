@@ -101,7 +101,8 @@ read_nz_variables() {
 # 创建快捷指令
 create_shortcut() {
   cat > "$WORKDIR/sb.sh" << EOF
-#!/usr/bin/env bash
+#!/bin/bash
+
 bash <(curl -Ls https://raw.githubusercontent.com/yutian81/serv00-ct8/main/sb4-00-socks.sh) \$1
 EOF
   chmod +x "$WORKDIR/sb.sh"
