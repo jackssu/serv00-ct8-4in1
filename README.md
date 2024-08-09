@@ -58,6 +58,13 @@ bash <(curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/sb4-00
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/eooce/sing-box/main/sb_serv00.sh)
 ```
+### 一键四协议无交互：vmess-ws|vmess-ws-tls(argo)|hy2|tuic5|nezha-agent
+> UUID=xxxxxx NEZHA_SERVER=xxxxxx NEZHA_PORT=xxxxx NEZHA_KEY=xxxxx  ARGO_DOMAIN=xxxxx ARGO_AUTH=xxxxxx  VMESS_PORT=xxxxx  TUIC_PORT=xxxxx  HY2_PORT=xxxxx  
+> 支持将以上参数前置在一键脚本前，实现无交互一键安装
+
+```
+bash <(curl -Ls https://raw.githubusercontent.com/eooce/sing-box/main/sb-00.sh)
+```
 ### 一键三协议：vless-reality|hy2|tuic5|nezha-agent
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/eooce/sing-box/test/sb_00.sh)
