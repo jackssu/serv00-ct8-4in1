@@ -101,7 +101,7 @@ read_nz_variables() {
 # 创建快捷指令
 create_shortcut() {
   cat > "$WORKDIR/sb.sh" << EOF
-#!/usr/local/bin/bash
+#!/bin/env bash
 
 bash <(curl -Ls bash <(curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/sb4-00-socks.sh)) \$1
 EOF
@@ -479,6 +479,7 @@ purple "list.txt saved successfully"
 purple "Running done!"
 sleep 3 
 # rm -rf web bot npm boot.log config.json sb.log core tunnel.yml tunnel.json
+
 }
 
 #主菜单
@@ -486,7 +487,7 @@ menu() {
    clear
    echo ""
    purple "=== Serv00|ct8老王sing-box一键脚本（yutian81改版） ===\n"
-   purple "支持快捷命令，再次运行只需输入 sb \n"
+   purple "支持快捷命令，再次运行只需输入 sb\n"
    echo -e "${green}脚本地址:${re}${yellow}https://github.com/eooce/Sing-box${re}\n"
    purple "转载请著名出处，请勿滥用\n"
    green "1. 安装sing-box"
