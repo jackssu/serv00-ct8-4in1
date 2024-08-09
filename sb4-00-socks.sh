@@ -115,6 +115,7 @@ reading "\n确定继续安装吗？【y/n】: " choice
         download_singbox && wait
         run_sb && sleep 3
         get_links
+		creat_corn
       ;;
     [Nn]) exit 0 ;;
     *) red "无效的选择，请输入y或n" && menu ;;
@@ -464,14 +465,16 @@ sleep 3
 # rm -rf web bot npm boot.log config.json sb.log core tunnel.yml tunnel.json
 }
 
-read -p "是否添加 crontab 守护进程的计划任务(Y/N 回车N): " crontab
-crontab=${crontab^^} # 转换为大写
-if [ "$crontab" == "Y" ]; then
-  echo "添加 crontab 守护进程的计划任务"
-  curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/check_sb_cron.sh | bash
-else
-  echo "不添加 crontab 计划任务"
-fi
+creat_corn() {
+	read -p "是否添加 crontab 守护进程的计划任务(Y/N 回车N): " crontab
+	crontab=${crontab^^} # 转换为大写
+	if [ "$crontab" == "Y" ]; then
+	  echo "添加 crontab 守护进程的计划任务"
+	  curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/check_sb_cron.sh | bash
+	else
+	  echo "不添加 crontab 计划任务"
+	fi
+}
 
 #主菜单
 menu() {
