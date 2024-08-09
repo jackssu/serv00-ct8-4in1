@@ -9,7 +9,6 @@ CRON_NEZHA="nohup ${WORKDIR}/npm -s ${NEZHA_SERVER}:${NEZHA_PORT} -p ${NEZHA_KEY
 CRON_SB="nohup ${WORKDIR}/web run -c config.json >/dev/null 2>&1 &"
 CRON_ARGO="nohup ${WORKDIR}/bot $args >/dev/null 2>&1 &"
 CRON_JOB="0 */12 * * *" # 在面板中添加每 12 小时运行任务的 corn
-
 [[ "$HOSTNAME" == "s1.ct8.pl" ]] && WORKDIR="domains/${USERNAME}.ct8.pl/logs" || WORKDIR="domains/${USERNAME}.serv00.net/logs"
 [ -d "$WORKDIR" ] || (mkdir -p "$WORKDIR" && chmod 777 "$WORKDIR")
 
