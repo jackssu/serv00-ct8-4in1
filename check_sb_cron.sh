@@ -3,18 +3,8 @@
 USERNAME=$(whoami)
 HOSTNAME=$(hostname)
 
-# 根据HOSTNAME设置WORKDIR
-if [[ "$HOSTNAME" == "s1.ct8.pl" ]]; then
-  WORKDIR="domains/${USERNAME}.ct8.pl/logs"
-else
-  WORKDIR="domains/${USERNAME}.serv00.net/logs"
-fi
-
-# 检查目录是否存在，如果不存在则创建并赋予权限
-if [ ! -d "$WORKDIR" ]; then
-  mkdir -p "$WORKDIR"
-  chmod 777 "$WORKDIR"
-fi
+[[ "$HOSTNAME" == "s1.ct8.pl" ]] && WORKDIR="domains/${USERNAME}.ct8.pl/logs" || WORKDIR="domains/${USERNAME}.serv00.net/logs"
+[ -d "$WORKDIR" ] || (mkdir -p "$WORKDIR" && chmod 777 "$WORKDIR")
 
 CRON_NEZHA="nohup ${WORKDIR}/npm -s ${NEZHA_SERVER}:${NEZHA_PORT} -p ${NEZHA_KEY} ${NEZHA_TLS} >/dev/null 2>&1 &"
 CRON_SB="nohup ${WORKDIR}/web run -c config.json >/dev/null 2>&1 &"
