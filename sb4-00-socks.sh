@@ -101,15 +101,15 @@ read_nz_variables() {
 # 创建快捷指令
 create_shortcut() {
   cat > "$WORKDIR/sb.sh" << EOF
-#!/usr/home/$USERNAME/env bash
+#!/usr/bin/env bash
 bash <(curl -Ls https://raw.githubusercontent.com/yutian81/serv00-ct8/main/sb4-00-socks.sh) \$1
 EOF
   chmod +x "$WORKDIR/sb.sh"
   ln -sf "$WORKDIR/sb.sh" /usr/home/$USERNAME/sb
   if [ -s /usr/home/$USERNAME/sb ]; then
-    green "\nsb 快捷指令创建成功，输入 sb 即可快速呼出主菜单\n"
+    echo -e "\nsb 快捷指令创建成功，输入 sb 即可快速呼出主菜单\n"
   else
-    red "\nsb 快捷指令创建失败\n"
+    echo -e "\nsb 快捷指令创建失败\n"
   fi
 }
 
