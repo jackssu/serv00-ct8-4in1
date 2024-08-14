@@ -6,10 +6,7 @@
 - CT8目前不推荐安装哪吒探针，安装探针容易封号
 - 如果安装过其它脚本，请你安装以下脚本前用下面的清理服务器命令清除一次服务器后再安装！！！！！！
 
-## 卸载PM2 
-```
-pm2 unstartup && pm2 delete all && npm uninstall -g pm2
-```
+
 ## 重置服务器（依次运行）  
 ```
 pkill -kill -u 用户名
@@ -43,7 +40,7 @@ bash <(curl -s https://raw.githubusercontent.com/gshtwy/socks5-for-serv00/main/i
 > 与eooce老王脚本一样，支持在一键脚本前置UUID、端口、哪吒参数、Argo参数  
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/yutian81/serv00-ct8/main/sb4-00-socks.sh)
+bash <(curl -s https://github.com/jackssu/serv00-ct8/blob/main/sb4-00-socks.sh)
 ```
 
 ----
