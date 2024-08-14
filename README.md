@@ -1,4 +1,5 @@
-# 准备工作 参考缝合怪https://github.com/jackbrownsu
+# 参考缝合怪https://github.com/jackbrownsu
+准备工作
 - 在面板Additional servoces里打开Run your own applications为Enable  
 - 在面板Port reservation里添加 Add port 开放UDP和TCP端口  
 - Hysteria2或tuic用UDP端口，vmess、vless或Socks5用TCP端口
