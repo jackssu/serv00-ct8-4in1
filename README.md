@@ -38,7 +38,7 @@ bash <(curl -s https://raw.githubusercontent.com/gshtwy/socks5-for-serv00/main/i
 ```
 
 ### 给 serv00 & ct8 一键安装 vmess-ws|vmess-ws-tls(argo)|hy2|socks|nezha  
-> 本人在CM、eooce老王、William三位大佬的基础上修改，去掉了tuic5协议，增加了socks5协议  
+> yutian81在CM、eooce老王、William三位大佬的基础上修改，去掉了tuic5协议，增加了socks5协议  
 > 与eooce老王脚本一样，支持在一键脚本前置UUID、端口、哪吒参数、Argo参数  
 
 ```
